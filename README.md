@@ -3,8 +3,8 @@
 <img width="700" alt="스크린샷 2022-07-20 오후 3 59 23" src="https://user-images.githubusercontent.com/80513699/179917265-c32f679e-ce9e-4dd2-93d3-0e54b60af447.png">
 
 
-## Likelion Team Otr django project 
-
+🦁Likelion Team Otr django project 
+---
 | 프로젝트 소개 | 주요 기능 | 제작기간 | 사용 스택 |
 |:-------------:|:---------:|:--------:|:--------:|
 |         |      |   |   |   |
