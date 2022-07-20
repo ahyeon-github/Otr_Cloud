@@ -6,7 +6,7 @@
 ## Likelion Team Otr django project 
 
 |LikeLion 10th 해커톤| 
-|:----------:|:----------:|
+---
 |김지수 <br/>([@KimJisu-IT](https://github.com/KimJisu-IT))|임아현 <br/>([@ahyeon-github](https://github.com/ahyeon-github))
 |:----------:|:----------:|
 |Backend Developer(Django)|Backend Developer(Django)|
