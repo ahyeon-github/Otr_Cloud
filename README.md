@@ -14,8 +14,8 @@
   <tr>
     <td rowspan="3"></td>
     <td>
-      <img width="700" src="https://user-images.githubusercontent.com/86948824/179921960-d309b01e-1ec9-4b5e-ad46-bcac041dc109.jpg">
-
+      <img width="300" src="https://user-images.githubusercontent.com/86948824/179921960-d309b01e-1ec9-4b5e-ad46-bcac041dc109.jpg">
+    </td>
     <td> 
     <>
     </td>
