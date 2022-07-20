@@ -7,7 +7,7 @@
 
 
 
-|소개글 | 팀원소개 | 주요기능 |
+|소개글 | 팀원소개 | 팀원소개 | 주요기능 |
 |---|---|---|
 |김지수 <br/>([@KimJisu-IT](https://github.com/KimJisu-IT))|임아현 <br/>([@ahyeon-github](https://github.com/ahyeon-github))
 |Backend Developer(Django)|Backend Developer(Django)|
