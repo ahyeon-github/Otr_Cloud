@@ -7,7 +7,7 @@
 
 | 프로젝트 소개 | 주요 기능 | 제작기간 | 사용 스택 |
 |:-------------:|:---------:|:--------:|:--------:|
-|"Well-dying"<br>당신이 맞이하고 싶은 죽음은?<br>지털 임종체험, 유저작성 |로그인 및 회원가입 기능<br>문답서비스<br>유서작성|2022.07.08 ~ 2022.08.20|<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">  |
+|"Well-dying"<br>당신이 맞이하고 싶은 죽음은?<br>디지털 임종체험, 유저작성 웹 서비스 |로그인 및 회원가입 기능<br>문답서비스<br>유서작성|2022.07.08 ~ 2022.08.20|<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">  |
 
 
 
