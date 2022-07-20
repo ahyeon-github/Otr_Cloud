@@ -12,7 +12,7 @@
     <td>주요 기능</td>
   </tr>
   <tr>
-    <td rowspan="3"></td>
+    <td rowspan="2"></td>
     <td> </td>
     <td> 
     <>
