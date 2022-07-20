@@ -1,8 +1,8 @@
 ## 🌈Otr-Server
 멋쟁이사자처럼 10기 YUSEO TEAM Back-end
 
-<img width="500" alt="스크린샷 2022-07-20 오후 5 10 13" src="https://user-images.githubusercontent.com/80513699/179931163-6e4d78ec-fa7e-446a-8982-575946df8b44.png">
-<img width="500" alt="스크린샷 2022-07-20 오후 5 10 51" src="https://user-images.githubusercontent.com/80513699/179931289-c9802345-29e2-46ca-84ec-690d5568df55.png">
+<img width="400" alt="스크린샷 2022-07-20 오후 5 10 13" src="https://user-images.githubusercontent.com/80513699/179931163-6e4d78ec-fa7e-446a-8982-575946df8b44.png">
+<img width="400" alt="스크린샷 2022-07-20 오후 5 10 51" src="https://user-images.githubusercontent.com/80513699/179931289-c9802345-29e2-46ca-84ec-690d5568df55.png">
 
 
 ## 🦁Likelion Team Otr django project 
