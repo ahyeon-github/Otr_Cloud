@@ -15,7 +15,7 @@
     <td rowspan="3"></td>
     <td>
       <img width="300" src="https://user-images.githubusercontent.com/86948824/179921960-d309b01e-1ec9-4b5e-ad46-bcac041dc109.jpg">
-      <p> Backend Developer: 김지수(https://github.com/KimJisu-IT) </p>
+      <p> Backend Developer: 김지수([@KimJisu-IT](https://github.com/KimJisu-IT)) </p>
     </td>
     <td> 
     <>
