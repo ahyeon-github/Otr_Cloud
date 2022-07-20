@@ -12,12 +12,8 @@
 
 
 
-
-
-
-|소개글 | 팀원소개 | 팀원소개 | 주요기능 |
-|---|---|---|---|
 |김지수 <br/>([@KimJisu-IT](https://github.com/KimJisu-IT))|임아현 <br/>([@ahyeon-github](https://github.com/ahyeon-github))
+|:---:|:---:|
 |Backend Developer(Django)|Backend Developer(Django)|
 |![](https://user-images.githubusercontent.com/86948824/179921960-d309b01e-1ec9-4b5e-ad46-bcac041dc109.jpg)|![](https://user-images.githubusercontent.com/80513699/179923791-bd9ab0c4-73ea-4cbf-95fa-21b1d1d173ef.png)|
 
