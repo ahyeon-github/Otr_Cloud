@@ -15,10 +15,11 @@
     <td rowspan="3"></td>
     <td>
       <img width="300" src="https://user-images.githubusercontent.com/86948824/179921960-d309b01e-1ec9-4b5e-ad46-bcac041dc109.jpg">
-      <p>Backend Developer: 김지수 [@KimJisu-IT] (https://github.com/KimJisu-IT)</p>
+      <p>Backend Developer: 김지수</p>
     </td>
     <td> 
-    <>
+      <img width="300" src="https://user-images.githubusercontent.com/80513699/179923791-bd9ab0c4-73ea-4cbf-95fa-21b1d1d173ef.png">
+      <p>Backend Developer: </p>
     </td>
   </tr>
   <tr>
