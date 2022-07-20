@@ -1,5 +1,5 @@
 ## 🌈Otr-Server
-멋쟁이사자처럼 10기 YUSEO TEAM Back-end
+멋쟁이사자처럼 10기 Otr TEAM Back-end
 
 <img width="700" alt="스크린샷 2022-07-20 오후 5 10 13" src="https://user-images.githubusercontent.com/80513699/179931163-6e4d78ec-fa7e-446a-8982-575946df8b44.png">
 
