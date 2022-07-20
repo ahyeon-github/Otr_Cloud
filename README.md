@@ -25,7 +25,7 @@
   <tr>
     <td>
       <img width="300" src="https://user-images.githubusercontent.com/80513699/179923791-bd9ab0c4-73ea-4cbf-95fa-21b1d1d173ef.png">
-      <p>Backend Developer: </p>
+      <p>Backend Developer:임아현 </p>
     </td>
     <td>
     <>
