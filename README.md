@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td rowspan="3"></td>
-    <td>![김사랑](https://user-images.githubusercontent.com/86948824/179921482-c8ce1db3-0f79-4205-a23d-468a91cdc863.jpg)
+    <td>https://user-images.githubusercontent.com/86948824/179921482-c8ce1db3-0f79-4205-a23d-468a91cdc863.jpg
  </td>
     <td> 
     <>
