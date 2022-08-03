@@ -40,12 +40,11 @@ INSTALLED_APPS = [
     'yuseoapp',
     'users',
 
-    # The following apps are required:
-    'django.contrib.sites',
-
-    'allauth',
-    'allauth.account',
+    'rest_framework',
     'allauth.socialaccount',
+    'allauth.account',
+    'allauth',
+    'django.contrib.sites',
 ]
 
 SITE_ID = 1
@@ -119,11 +118,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

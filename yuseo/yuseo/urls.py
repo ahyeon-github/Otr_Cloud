@@ -24,5 +24,5 @@ import users.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), # 로깅 추가
-    path('', users.views.hello, name="hello")
+    path('', include('yuseoapp.urls'))
 ]
