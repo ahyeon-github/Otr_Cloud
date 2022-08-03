@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=100)),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('body', models.TextField()),
+                ('image', models.ImageField(upload_to="%Y/%m/%d")),
             ],
         ),
     ]

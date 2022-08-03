@@ -3,5 +3,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-def hello(request):
-    return render(request, 'templates/users/hello.html')
+def login(request):
+    return render(request, 'users/login.html')
+
+def home(request):
+    return render(request, 'users/home.html')

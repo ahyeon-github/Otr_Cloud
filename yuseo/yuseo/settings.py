@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +26,7 @@ SECRET_KEY = 'django-insecure-(-h4kuq2x^2omonw#bwn%)9q83!c#6zjwmmjjgjd6f!onl^_0a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -39,15 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'yuseoapp',
     'users',
-
     'rest_framework',
-    'allauth.socialaccount',
-    'allauth.account',
-    'allauth',
     'django.contrib.sites',
+    
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.naver', # 어떤 소셜 서비스를 사용하는지 추가
 ]
 
 SITE_ID = 1
+LOGIN_REDIRECT_URL = 'home' # 로그인 후 리디렉션할 페이지
+ACCOUNT_SIGNUP_REDIRECT_URL='home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -148,3 +151,5 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
