@@ -2,6 +2,9 @@ from asyncio import Task
 from dataclasses import field, fields
 from rest_framework import serializers
 from .models import Yuseo 
+
+
+
  
 
 class YuseoSerializer(serializers.ModelSerializer):

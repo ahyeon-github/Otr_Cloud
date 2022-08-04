@@ -26,6 +26,7 @@ from django.conf.urls.static import static
 # config/urls.py
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('yuseoapp.urls'))
     path('accounts/', include('allauth.urls')), # 로깅 추가
     path('users/', include('users.urls')),
 
