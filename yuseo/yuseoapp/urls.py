@@ -1,4 +1,6 @@
-from django.urls import path
+from django import views
+from django.urls import include, path
+
 from .views import YuseoDetail, YuseoList
 
 urlpatterns = [

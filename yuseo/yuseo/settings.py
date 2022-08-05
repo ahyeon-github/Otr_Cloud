@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-(-h4kuq2x^2omonw#bwn%)9q83!c#6zjwmmjjgjd6f!onl^_0a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -41,7 +40,17 @@ INSTALLED_APPS = [
     'yuseoapp',
     'users',
     'rest_framework',
+    'django.contrib.sites',
+    
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.naver', # 어떤 소셜 서비스를 사용하는지 추가
 ]
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = 'home' # 로그인 후 리디렉션할 페이지
+ACCOUNT_SIGNUP_REDIRECT_URL='home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,6 +75,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -126,6 +138,20 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
+NAVER_CLIENT_ID = 'rA0H6_4YbABuGWvVnnsF'
+NAVER_SECRET_KEY = '72o6kCBNpY'
+
+AUTHENTICATION_BACKENDS = [
+
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
