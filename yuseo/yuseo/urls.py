@@ -26,8 +26,7 @@ from django.conf.urls.static import static
 # config/urls.py
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('yuseoapp.urls'))
-    path('accounts/', include('allauth.urls')), # 로깅 추가
+    path('', include('yuseoapp.urls')),
+    path('accounts/', include('allauth.urls')),
     path('users/', include('users.urls')),
-
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
