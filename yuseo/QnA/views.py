@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Question
 from .forms import AnswerForm
 
@@ -11,8 +11,9 @@ def question(request):
     return render(request, 'QnA/question.html', {'questions':questions})
 
 def detail(request, question_id):
-    question_detail= get_object_or_404(Question, pk= question_id)
-    return render(request, 'QnA/detail.html', {'question': question_detail})
+    question=get_object_or_404(Question, pk= question_id)
+    form = AnswerForm()
+    return render(request, 'QnA/detail.html', {'form': form, 'question': question})
 
 
 def answercreate(request, question_id):
@@ -23,7 +24,5 @@ def answercreate(request, question_id):
             answer= form.save(commit=False)
             answer.question= question
             answer.save()
-            return redirect('detail', question_id=question.pk)
-    else:
-        form= AnswerForm
-        return render(request, '/detail.html', {'form':form, 'question':question})
+
+    return redirect('question', question_id=question.pk)
