@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'django.contrib.sites',
+    'QnA',
     
     'allauth',
     'allauth.account',
