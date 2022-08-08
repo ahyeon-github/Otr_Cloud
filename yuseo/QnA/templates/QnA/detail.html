@@ -6,5 +6,10 @@
 
         <h3> {{ question.title }}</h3>
         <p> 답변 입력 페이지</p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">답변 등록</button>
+        </form>
 
 {% endblock %}
