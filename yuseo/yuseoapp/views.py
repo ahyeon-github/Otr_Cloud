@@ -21,19 +21,6 @@ class YuseoList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-class UploadView(APIView):
-    parser_classes = (FileUploadParser, )
-    
-    def post(self, request):
-        file = request.data.get('file', None)
-        import pdb; pdb.set_trace()
-        print(file)
-        if file:
-            return Response({'message': "File is recieved"}, status=200)
-        else:
-            return Response({'message': "File is missing"}, status=200)
-
 
 class YuseoDetail(APIView):
     def get_object(self, pk):
@@ -62,3 +49,15 @@ class YuseoDetail(APIView):
         yuseo = self.get_object(pk)
         yuseo.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+class UploadView(APIView):
+    parser_classes = (FileUploadParser, )
+    
+    def post(self, request):
+        file = request.data.get('file', None)
+        import pdb; pdb.set_trace()
+        print(file)
+        if file:
+            return Response({'message': "File is recieved"}, status=200)
+        else:
+            return Response({'message': "File is missing"}, status=200)
