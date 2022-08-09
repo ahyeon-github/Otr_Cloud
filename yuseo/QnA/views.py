@@ -25,4 +25,4 @@ def answercreate(request, question_id):
             answer.question= question
             answer.save()
 
-    return redirect('question', question_id=question.pk)
+    return redirect('question')
