@@ -8,6 +8,7 @@ class Yuseo(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
     image = models.ImageField(upload_to='%Y/%m/%d', null=True)
+    
   
     
     def __Str__(self):
