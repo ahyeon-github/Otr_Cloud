@@ -1,0 +1,12 @@
+{% block content %}
+
+    <title> Question List </title>
+
+    <h1> Question List </h1>
+
+    {% for question in questions.all %}
+        <h3> {{ question.title }}</h3>
+        <a href="{% url 'question_detail' question.id %}"> 답변 입력하기</a>
+    {% endfor %}
+
+{% endblock %}

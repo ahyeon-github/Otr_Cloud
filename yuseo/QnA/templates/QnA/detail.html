@@ -1,0 +1,21 @@
+{% block content %}
+
+    <title> Question List </title>
+
+    <h1> Question </h1>
+
+        <h3> {{ question.title }}</h3>
+        <p> 답변 입력 페이지</p>
+        <form action="{% url 'answercreate' question.id %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">답변 등록</button>
+        </form>
+
+        <h4>작성한 문답 확인</h4>
+        {% for answer in question.answer_set.all %}
+            {{ answer.content }}
+            <br>
+        {% endfor %}
+
+{% endblock %}
