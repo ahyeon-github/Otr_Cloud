@@ -1,17 +1,17 @@
 from rest_framework import serializers
-from .models import Question, Answer
+from .models import QuestionSeven, AnswerSeven
 
 
 class QuestionSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = Question
-        fields = ('id', 'title', 'subtitle', 'date')
+        model = QuestionSeven
+        fields = ('title', 'subtitle')
         
 class AnswerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Answer
-        fields = ('id', 'body', 'date')
+        model = AnswerSeven
+        fields = ('body',)
 
         
     
