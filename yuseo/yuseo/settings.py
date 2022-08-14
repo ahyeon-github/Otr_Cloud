@@ -62,12 +62,13 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = 'home' # 로그인 후 리디렉션할 페이지
 ACCOUNT_SIGNUP_REDIRECT_URL='home'
 
+
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',   #주석처리
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', #주석처리
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
