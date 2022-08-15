@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     #my app
     'yuseoapp',
     #'users',
+    
+    #cors 오류 해결코드
+    'corsheaders',
 
     
     'rest_framework',
@@ -66,12 +69,20 @@ ACCOUNT_SIGNUP_REDIRECT_URL='home'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',   #주석처리
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware', #주석처리
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+#cors 오류 코드 
+CORS_ORIGIN_WHITELIST = ('http://127.0.0.1:3000',
+                         'http://localhost:3000')
+
+
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'yuseo.urls'
 
@@ -93,6 +104,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'yuseo.wsgi.application'
 
