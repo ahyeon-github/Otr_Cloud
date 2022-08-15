@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-AUTH_USER_MODEL = 'users.User'
+#AUTH_USER_MODEL = 'users.User'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     
     #my app
     'yuseoapp',
-    'users',
+    #'users',
 
     
     'rest_framework',
@@ -62,12 +62,13 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = 'home' # 로그인 후 리디렉션할 페이지
 ACCOUNT_SIGNUP_REDIRECT_URL='home'
 
+
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',   #주석처리
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', #주석처리
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -169,12 +170,13 @@ MEDIA_URL = '/media/'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
+    #'DEFAULT_PERMISSION_CLASSES': (
+    #    'rest_framework.permissions.IsAuthenticated',
+    #),
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
@@ -186,7 +188,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-JWT_AUTH = {
+""" JWT_AUTH = {
     'JWT_ENCODE_HANDLER':
         'rest_framework_jwt.utils.jwt_encode_handler',
 
@@ -219,4 +221,4 @@ JWT_AUTH = {
 
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
     'JWT_AUTH_COOKIE': None,
-}
+} """

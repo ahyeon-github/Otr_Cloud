@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Answer, Question
+from .models import AnswerSeven, QuestionSeven
 
 # Register your models here.
-admin.site.register(Question)
-admin.site.register(Answer)
+admin.site.register(QuestionSeven)
+admin.site.register(AnswerSeven)
