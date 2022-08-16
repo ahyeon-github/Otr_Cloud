@@ -5,10 +5,10 @@ from rest_framework.response import Response
 from .serializers import YuseoSerializer, YuseoListSerializer
 from .models import Yuseo
 from django.http import Http404
-from rest_framework.parsers import FileUploadParser
+from rest_framework.parsers import FileUploadParser, JSONParser, MultiPartParser
 
 
-class YuseoList(APIView):
+class Yuseo(APIView):
     def get(self, request):
         yuseos = Yuseo.objects.all()
         
@@ -21,6 +21,8 @@ class YuseoList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 class YuseoDetail(APIView):
     def get_object(self, pk):
@@ -50,6 +52,7 @@ class YuseoDetail(APIView):
         yuseo.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
+
 class UploadView(APIView):
     parser_classes = (FileUploadParser, )
     
@@ -61,3 +64,12 @@ class UploadView(APIView):
             return Response({'message': "File is recieved"}, status=200)
         else:
             return Response({'message': "File is missing"}, status=200)
+
+
+
+""" class FileView(ModelViewSet):
+    queryset= File.objects.all()
+    serializer_class= FileSerializer
+
+    def create(self, request, *args, **kwargs):
+        return super(FileViewSet, self).create(request, *args, **kwargs) """
