@@ -31,3 +31,4 @@ class AnswerSeven(models.Model):
         instance.body = validated_data.get('body', instance.body)
         instance.save()
         return instance
+
