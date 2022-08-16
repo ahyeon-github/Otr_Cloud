@@ -1,6 +1,7 @@
 from django.urls import path
 from QnA.views import Question, Answer, AnswerTwo, AnswerThree, AnswerFour, AnswerFive, AnswerSix, AnswerLast, AnswerAll
 
+
 urlpatterns = [
    path('question/', Question.as_view()),
    path('answer1/', Answer.as_view()),
