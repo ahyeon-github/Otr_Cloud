@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('users/', include('users.urls')),
     path('', include('kakao.urls')),
-    path('', include('yuseoapp.urls')),
+    path('otr/', include('yuseoapp.urls')),
     path('accounts/', include('allauth.urls')),
     path('QnA/', include('QnA.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
