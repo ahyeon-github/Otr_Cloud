@@ -16,21 +16,32 @@ JWT_ENCODE_HANDLER = api_settings.JWT_ENCODE_HANDLER
 User = get_user_model()
 
 class UserCreateSerializer(serializers.Serializer):
-    email = serializers.EmailField(required=True)
-    username = serializers.CharField(required=True)
-    password = serializers.CharField(required=True)
+    class Meta:
+        model = User
+        fields='__all__'
+        
+    # email = serializers.EmailField(required=True)
+    # username = serializers.CharField(required=True)
+    # password = serializers.CharField(required=True)
 
     def create(self, validated_data):
-        user = User.objects.create(
-            email=validated_data['email'],
-            username=validated_data['username'],
+        # user = User.objects.create(
+        #     email=validated_data['email'],
+        #     username=validated_data['username'],
+        # )
+        # user.set_password(validated_data['password'])
+
+        email = validated_data.get('email')
+        password = validated_data.get('password')
+        user = User(
+            email=email
         )
-        user.set_password(validated_data['password'])
+        user.set_password(password)
 
         user.save()
         return user
     
-class UserLoginSerializer(serializers.Serializer):
+""" class UserLoginSerializer(serializers.Serializer):
     email = serializers.CharField(max_length=64)
     password = serializers.CharField(max_length=128, write_only=True)
     token = serializers.CharField(max_length=255, read_only=True)
@@ -55,4 +66,10 @@ class UserLoginSerializer(serializers.Serializer):
         return {
             'email': user.email,
             'token': jwt_token
-        }
+        } """
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'

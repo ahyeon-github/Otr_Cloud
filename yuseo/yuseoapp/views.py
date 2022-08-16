@@ -5,12 +5,27 @@ from rest_framework.response import Response
 from .serializers import YuseoSerializer, YuseoListSerializer
 from .models import Yuseo
 from django.http import Http404
-from rest_framework.parsers import FileUploadParser, JSONParser, MultiPartParser
+from rest_framework.parsers import FileUploadParser
 
 
-class Yuseo(APIView):
+class YuseoOne(APIView):
     def get(self, request):
-        yuseos = Yuseo.objects.all()
+        yuseos = Yuseo.objects.filter(id__in=[1])
+
+        serializer = YuseoListSerializer(yuseos, many=True)
+        return Response(serializer.data)
+    
+    def post (self , request):
+        serializer = YuseoSerializer(data= request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class YuseoTwo(APIView):
+    def get(self, request):
+        yuseos = Yuseo.objects.filter(id__in=[2])
         
         serializer = YuseoListSerializer(yuseos, many=True)
         return Response(serializer.data)
