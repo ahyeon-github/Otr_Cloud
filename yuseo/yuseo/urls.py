@@ -31,4 +31,5 @@ urlpatterns = [
     path('otr/', include('yuseoapp.urls')),
     path('accounts/', include('allauth.urls')),
     path('QnA/', include('QnA.urls')),
+    path('yuseotext/', include('yuseotext.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
