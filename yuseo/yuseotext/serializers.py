@@ -15,5 +15,5 @@ class YuseoTextSerializer(serializers.ModelSerializer):
 class YuseoTextListSerializer(serializers.ModelSerializer):
     class Meta:
         model = YuseoText
-        fields = ('id', 'title', 'date')
+        fields = ('id', 'title', 'date', 'body')
         
