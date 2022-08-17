@@ -13,7 +13,11 @@ class YuseoTextSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'date', 'time', 'body')
         
 class YuseoTextListSerializer(serializers.ModelSerializer):
+    time = serializers.TimeField(format="%H:%M")
+
     class Meta:
         model = YuseoText
         fields = ('id', 'title', 'date', 'time', 'body')        # body 추가
+
+
         
