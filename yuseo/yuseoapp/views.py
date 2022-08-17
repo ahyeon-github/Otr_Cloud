@@ -39,6 +39,22 @@ class YuseoTwo(APIView):
 
 
 
+class YuseoThree(APIView):
+    def get(self, request):
+        yuseos = Yuseo.objects.filter(id__in=[3])
+        
+        serializer = YuseoListSerializer(yuseos, many=True)
+        return Response(serializer.data)
+    
+    def post (self , request):
+        serializer = YuseoSerializer(data= request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
 class YuseoDetail(APIView):
     def get_object(self, pk):
         try:
