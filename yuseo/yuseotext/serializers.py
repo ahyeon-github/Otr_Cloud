@@ -10,10 +10,10 @@ from .models import YuseoText
 class YuseoTextSerializer(serializers.ModelSerializer):
     class Meta:
         model = YuseoText
-        fields = ('id', 'title', 'date', 'body')
+        fields = ('id', 'title', 'date', 'time', 'body')
         
 class YuseoTextListSerializer(serializers.ModelSerializer):
     class Meta:
         model = YuseoText
-        fields = ('id', 'title', 'date')
+        fields = ('id', 'title', 'date', 'time', 'body')        # body 추가
         
