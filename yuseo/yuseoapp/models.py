@@ -15,7 +15,5 @@ class Yuseo(models.Model):
     def __Str__(self):
         return self.title
     
-    def summary(self):
+    def summary(self):      # 연동 시 필요없다면 삭제해야함.
         return self.body [:30]
-
-

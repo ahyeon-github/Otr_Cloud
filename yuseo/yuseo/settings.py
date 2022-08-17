@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     
     #my app
     'yuseoapp',
+    'yuseotext', # 유서 text만 살려놓은 test 앱
     #'users',
     
     #cors 오류 해결코드
