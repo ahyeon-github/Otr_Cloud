@@ -8,6 +8,7 @@ from .models import YuseoText
 
 
 class YuseoTextSerializer(serializers.ModelSerializer):
+    time = serializers.TimeField(format="%H:%M")
     class Meta:
         model = YuseoText
         fields = ('id', 'title', 'date', 'time', 'body')
