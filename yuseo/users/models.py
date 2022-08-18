@@ -44,7 +44,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
     def __str__(self):
-        return self.user_id
+        return self.login_id
 
     # 헬퍼 클래스 사용
     objects = UserManager()
@@ -58,6 +58,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     class Meta:
         db_table = 'user'
-
-
- 
