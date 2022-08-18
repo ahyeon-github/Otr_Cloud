@@ -1,91 +1,55 @@
-"""from pyexpat.errors import messages
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-
-# Create your views here.
-def login(request):
-    return render(request, 'users/login.html')
-
-def home(request):
-    return render(request, 'users/home.html')
-"""
-
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.contrib.auth import login
+from django.core.files.base import ContentFile
 from rest_framework import status
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
-from .serializers import UserLoginSerializer, UserSerializer
 
-from .serializers import UserCreateSerializer
+import requests, json
 from .models import User
+from django.contrib.auth import authenticate
 
-from rest_framework_simplejwt import TokenObtainPairSerializer
-
-
-""" @api_view(['POST'])
-@permission_classes([AllowAny])
-def createUser(request):
-    if request.method == 'POST':
-        serializer = UserCreateSerializer(data=request.data)
-        if not serializer.is_valid(raise_exception=True):
-            return Response({"message": "Request Body Error."}, status=status.HTTP_409_CONFLICT)
-
-        if User.objects.filter(email=serializer.validated_data['email']).first() is None:
-            serializer.save()
-            return Response({"message": "ok"}, status=status.HTTP_201_CREATED)
-        return Response({"message": "duplicate email"}, status=status.HTTP_409_CONFLICT)
+from .serializers import SignupSerializer, UserSerializer
 
 
-
-@api_view(['POST'])
-@permission_classes([AllowAny])
-def login(request):
-    if request.method == 'POST':
-        serializer = UserLoginSerializer(data=request.data)
-
-        if not serializer.is_valid(raise_exception=True):
-            return Response({"message": "Request Body Error."}, status=status.HTTP_409_CONFLICT)
-        if serializer.validated_data['email'] == "None":
-            return Response({'message': 'fail'}, status=status.HTTP_200_OK)
-
-        response = {
-            'success': 'True',
-            'token': serializer.data['token']
-        }
-        return Response(response, status=status.HTTP_200_OK) """
-
-
-class RegisterAPIView(APIView):
+class JWTSignupView(APIView):
+    permission_classes = [AllowAny]
+    
     def post(self, request):
-        serializer = UserCreateSerializer(data=request.data)
+        serializer = SignupSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
-            # jwt token 접근해주기
+            # jwt token 접근
             token = TokenObtainPairSerializer.get_token(user)
             refresh_token = str(token)
             access_token = str(token.access_token)
             res = Response(
                 {
                     "user": serializer.data,
-                    "message": "register successs",
+                    "message": "회원가입에 성공하였습니다.",
                     "token": {
                         "access": access_token,
                         "refresh": refresh_token,
                     },
                 },
-                status=status.HTTP_200_OK,
+                status = status.HTTP_200_OK,
             )
+            # 쿠키에 넣어주기(set_cookie)
             res.set_cookie("access", access_token, httponly=True)
             res.set_cookie("refresh", refresh_token, httponly=True)
             return res
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-class AuthView(APIView):
-
+class JWTLoginView(APIView):
+    permission_classes = [AllowAny]
+    
     def post(self, request):
         user = authenticate(
-            email=request.data.get("email"), password=request.data.get("password")
+            login_id=request.data.get("login_id"), password=request.data.get("password")
         )
         if user is not None:
             serializer = UserSerializer(user)
@@ -95,13 +59,13 @@ class AuthView(APIView):
             res = Response(
                 {
                     "user": serializer.data,
-                    "message": "login success",
+                    "message": "로그인에 성공하였습니다.",
                     "token": {
                         "access": access_token,
                         "refresh": refresh_token,
                     },
                 },
-                status=status.HTTP_200_OK,
+                status = status.HTTP_200_OK,
             )
             return res
         else:
