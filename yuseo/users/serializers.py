@@ -2,6 +2,9 @@ from .models import User
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
+
+   
+
 User = get_user_model()
 
 class SignupSerializer(serializers.ModelSerializer):
@@ -12,11 +15,11 @@ class SignupSerializer(serializers.ModelSerializer):
     def create(self, validated_data): # 회원가입
         login_id = validated_data.get('login_id')
         password = validated_data.get('password')
-        email = validated_data.get('email')
+        nickname = validated_data.get('nickname')
         
         user = User(
             login_id=login_id,
-            email = email,
+            nickname = nickname,
         )
         user.set_password(password)
         user.save()
