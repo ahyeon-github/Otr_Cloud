@@ -51,6 +51,8 @@ class JWTLoginView(APIView):
         user = authenticate(
             login_id=request.data.get("login_id"), password=request.data.get("password")
         )
+    
+      
         if user is not None:
             serializer = UserSerializer(user)
             token = TokenObtainPairSerializer.get_token(user)
