@@ -4,25 +4,22 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, Permis
 class UserManager(BaseUserManager):
     use_in_migrations: True
 
-    def create_user(self, login_id, password, email, **kwargs):
-        if not email:
-            raise ValueError('Users must have an email address')
-
+    def create_user(self, login_id, password, nickname, **kwargs):
        
         user = self.model(
             login_id = login_id,
-            email = email,
+
+            nickname = nickname,
     
         )
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, login_id, password, **extra_fields):
+    def create_superuser(self, login_id, password, **extra_fields):
     
         superuser = self.create_user(
             login_id = login_id,
-            email = email,
             password = password,
         )
 
@@ -34,7 +31,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     login_id = models.CharField(unique=True, blank=False, null=False, max_length=15, default='')
-    email = models.CharField(unique=True, blank=False, null=False, max_length=255)
+    nickname = models.CharField(unique=True, blank=False, null=False, max_length=15)
+    #email = models.CharField(unique=True, blank=False, null=False, max_length=255)
     #last_login = models.DateField(auto_now=True, null=True)
     is_superuser = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -52,7 +50,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     # 사용자의 username field는 user id로 설정
     USERNAME_FIELD = 'login_id'
     # 필수 작성 field
-    REQUIRED_FIELDS = ['email']
     
     
     
