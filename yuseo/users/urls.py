@@ -1,19 +1,12 @@
-"""from django.urls import path
-from users import views
-
-urlpatterns = [
-    path('login/', views.login, name='login'),
-    path('', views.home, name='home'),
-]"""
-
 from django.urls import path
-
-from . import views
+from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework_simplejwt.views import TokenRefreshView
+from rest_framework_simplejwt.views import TokenVerifyView
+from .views import *
 
 urlpatterns = [
-    path('create/', views.createUser),
-    path('login/', views.login),
+    path('signup/', JWTSignupView.as_view()), # 회원가입
+    path('login/', JWTLoginView.as_view()), # 로그인
+    path('login/refresh/', TokenRefreshView.as_view()), # 토큰 재발급
 
-    path("register/", views.RegisterAPIView.as_view()),
-    path("auth/", views.AuthView.as_view()), #로그인하기
 ]
