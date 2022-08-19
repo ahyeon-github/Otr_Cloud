@@ -1,6 +1,10 @@
 from tkinter import N
+from tkinter import TRUE
+
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
+
+cleanup_data = TRUE
 
 class UserManager(BaseUserManager):
     use_in_migrations: True
