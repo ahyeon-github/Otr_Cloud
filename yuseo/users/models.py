@@ -1,3 +1,4 @@
+from tkinter import N
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 
@@ -16,12 +17,14 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, login_id, password, **extra_fields):
-    
+    def create_superuser(self, nickname, login_id, password, **extra_fields):
+
         superuser = self.create_user(
+            nickname = nickname,
             login_id = login_id,
             password = password,
-        )
+
+            )
 
         superuser.is_staff = True
         superuser.is_superuser = True
@@ -40,6 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    REQUIRED_FIELDS = ['nickname', 'password']      # superuser 만들 때 필수 !!
 
     def __str__(self):
         return self.login_id
@@ -55,6 +59,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     class Meta:
         db_table = 'user'
-
-
- 
